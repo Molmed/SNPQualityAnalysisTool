@@ -1,0 +1,83 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# SQL Server Management Studio Solution File, Format Version 13.00
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{4F2E2C19-372F-40D8-9FA7-9D2138C6997A}") = "QC_devel_functions", "SQAT\QC_devel_functions\QC_devel_functions.ssmssqlproj", "{6AE360ED-BD31-4981-BA85-BB5CEC709B53}"
+EndProject
+Project("{4F2E2C19-372F-40D8-9FA7-9D2138C6997A}") = "QC_devel_procedures", "SQAT\QC_devel_procedures\QC_devel_procedures.ssmssqlproj", "{AE452821-1261-4CE8-8A75-C609D6D7EB43}"
+EndProject
+Project("{4F2E2C19-372F-40D8-9FA7-9D2138C6997A}") = "QC_devel_tables", "SQAT\QC_devel_tables\QC_devel_tables.ssmssqlproj", "{F8CC6DCA-12E2-4D53-88AC-D5D79EB7D7F3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Default|Default = Default|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6AE360ED-BD31-4981-BA85-BB5CEC709B53}.Default|Default.ActiveCfg = Default
+		{AE452821-1261-4CE8-8A75-C609D6D7EB43}.Default|Default.ActiveCfg = Default
+		{F8CC6DCA-12E2-4D53-88AC-D5D79EB7D7F3}.Default|Default.ActiveCfg = Default
+		{FA53A66A-4CC8-4875-B743-172B12433A1D}.Default|Default.ActiveCfg = Default
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(SourceCodeControl) = preSolution
+		SccNumberOfProjects = 18
+		SccProjectName0 = $/TfsRoot/LIMS/Database_Objects
+		SccLocalPath0 = .
+		SccProvider0 = MSSCCI:Team\u0020Foundation\u0020Server\u0020MSSCCI\u0020Provider
+		CanCheckoutShared = false
+		SccProjectUniqueName1 = Chiasma\\GTDB2_devel_roles\\GTDB2_devel_roles.ssmssqlproj
+		SccLocalPath1 = .
+		SccProjectFilePathRelativizedFromConnection1 = Chiasma\\GTDB2_devel_roles\\
+		SccProjectUniqueName2 = Chiasma\\GTDB2_devel_functions\\GTDB2_devel_functions.ssmssqlproj
+		SccLocalPath2 = .
+		SccProjectFilePathRelativizedFromConnection2 = Chiasma\\GTDB2_devel_functions\\
+		SccProjectUniqueName3 = Chiasma\\GTDB2_devel_procedures\\GTDB2_devel_procedures.ssmssqlproj
+		SccLocalPath3 = .
+		SccProjectFilePathRelativizedFromConnection3 = Chiasma\\GTDB2_devel_procedures\\
+		SccProjectUniqueName4 = Chiasma\\GTDB2_devel_triggers\\GTDB2_devel_triggers.ssmssqlproj
+		SccLocalPath4 = .
+		SccProjectFilePathRelativizedFromConnection4 = Chiasma\\GTDB2_devel_triggers\\
+		SccProjectUniqueName5 = Chiasma\\GTDB2_devel_views\\GTDB2_devel_views.ssmssqlproj
+		SccLocalPath5 = .
+		SccProjectFilePathRelativizedFromConnection5 = Chiasma\\GTDB2_devel_views\\
+		SccProjectUniqueName6 = FP\\FP_devel\\FP_devel.ssmssqlproj
+		SccLocalPath6 = .
+		SccProjectFilePathRelativizedFromConnection6 = FP\\FP_devel\\
+		SccProjectUniqueName7 = SQAT\\QC_devel_functions\\QC_devel_functions.ssmssqlproj
+		SccLocalPath7 = .
+		SccProjectFilePathRelativizedFromConnection7 = SQAT\\QC_devel_functions\\
+		SccProjectUniqueName8 = SQAT\\QC_devel_procedures\\QC_devel_procedures.ssmssqlproj
+		SccLocalPath8 = .
+		SccProjectFilePathRelativizedFromConnection8 = SQAT\\QC_devel_procedures\\
+		SccProjectUniqueName9 = SQAT\\QC_devel_tables\\QC_devel_tables.ssmssqlproj
+		SccLocalPath9 = .
+		SccProjectFilePathRelativizedFromConnection9 = SQAT\\QC_devel_tables\\
+		SccProjectUniqueName10 = PlattformOrdMan\\BookKeeping_devel_procedures\\BookKeeping_devel_procedures.ssmssqlproj
+		SccLocalPath10 = .
+		SccProjectFilePathRelativizedFromConnection10 = PlattformOrdMan\\BookKeeping_devel_procedures\\
+		SccProjectUniqueName11 = PlattformOrdMan\\BookKeeping_devel_triggers\\BookKeeping_devel_triggers.ssmssqlproj
+		SccLocalPath11 = .
+		SccProjectFilePathRelativizedFromConnection11 = PlattformOrdMan\\BookKeeping_devel_triggers\\
+		SccProjectUniqueName12 = PlattformOrdMan\\BookKeeping_devel_views\\BookKeeping_devel_views.ssmssqlproj
+		SccLocalPath12 = .
+		SccProjectFilePathRelativizedFromConnection12 = PlattformOrdMan\\BookKeeping_devel_views\\
+		SccProjectUniqueName13 = PlattformOrdMan\\BookKeeping_devel_functions\\BookKeeping_devel_functions.ssmssqlproj
+		SccLocalPath13 = .
+		SccProjectFilePathRelativizedFromConnection13 = PlattformOrdMan\\BookKeeping_devel_functions\\
+		SccProjectUniqueName14 = DBAMonitor\\DBAMonitor_procedures\\DBAMonitor_procedures.ssmssqlproj
+		SccLocalPath14 = .
+		SccProjectFilePathRelativizedFromConnection14 = DBAMonitor\\DBAMonitor_procedures\\
+		SccProjectUniqueName15 = Update\u0020scripts\\GTDB2_devel\\2015\\Release_GTDB2_150507\\Release_GTDB2_150507.ssmssqlproj
+		SccLocalPath15 = .
+		SccProjectFilePathRelativizedFromConnection15 = Update\u0020scripts\\GTDB2_devel\\2015\\Release_GTDB2_150507\\
+		SccProjectUniqueName16 = Administration_procedures\\Administration_procedures.ssmssqlproj
+		SccLocalPath16 = .
+		SccProjectFilePathRelativizedFromConnection16 = Administration_procedures\\
+		SccProjectUniqueName17 = Auxilliary_procedures\\Auxilliary_procedures.ssmssqlproj
+		SccLocalPath17 = .
+		SccProjectFilePathRelativizedFromConnection17 = Auxilliary_procedures\\
+	EndGlobalSection
+EndGlobal
