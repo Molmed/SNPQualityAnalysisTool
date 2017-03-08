@@ -1,0 +1,47 @@
+Item1MissingValue	ExpMissingValue	*/*
+item2missingvalue	expmissingvalue	*/*
+
+ItemDuplicateFailure	ExpDuplicateFailure	C/c
+itemDuplicateFailure	expDuplicateFailure	c/A
+
+ItemOnlyInSource2	ExpOnlyInSource2	A/A
+
+Item1TooManyAllelesSource1	ExpTooManyAllelesSource1	C/C
+Item2TooManyAllelesSource1	exptoomanyallelessource1	C/C
+
+Item1TooManyAllelesSource2	ExpTooManyAllelesSource2	C/G
+Item2TooManyAllelesSource2	exptoomanyallelessource2	t/g
+
+Item1MonomorphicInSource1	ExpMonomorphicInSource1	C/C
+Item2MonomorphicInSource1	ExpMonomorphicInSource1	C/t
+
+Item1MonomorphicInSource2	ExpMonomorphicInSource2	c/c
+Item2MonomorphicInSource2	ExpMonomorphicInSource2	c/c
+
+Item1MonomorphicInBoth	ExpMonomorphicInBoth	c/c
+Item2MonomorphicInBoth	expmonomorphicinboth	c/c
+
+Item1IncompatibleSNPType	ExpIncompatibleSNPType	t/g
+Item2IncompatibleSNPType	expincompatiblesnptype	g/G
+
+Item1compatibleSNPType	ExpCompatibleSNPType	c/t
+Item2compatibleSNPType	expcompatiblesnptype	C/c
+
+Item1ATSNPtype	ExpATSNPType	A/A
+Item2ATSNPtype	ExpATSNPType	A/t
+Item3ATSNPtype	ExpATSNPType	t/T
+
+Item1GCSNPtype	ExpGCSNPType	C/C
+Item2GCSNPtype	ExpGCSNPType	c/G
+Item3GCSNPtype	ExpGCSNPType	G/g
+
+ItemIdentical1	ExpIdentical1	a/A
+ItemIdentical2	ExpIdentical1	C/a
+ItemIdentical3	ExpIdentical2	t/c
+ItemIdentical4	ExpIdentical2	C/C
+
+ItemDifferent1	ExpDifferent1	a/c
+ItemDifferent2	ExpDifferent1	c/C
+ItemDifferent3	ExpDifferent2	t/T
+ItemDifferent4	ExpDifferent2	C/T
+

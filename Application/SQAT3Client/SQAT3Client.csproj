@@ -1,0 +1,499 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{7ADE55CE-150F-40E5-8DF0-F28D0095F82F}</ProjectGuid>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon>SQATApplication.ico</ApplicationIcon>
+    <AssemblyKeyContainerName>
+    </AssemblyKeyContainerName>
+    <AssemblyName>SNP Quality Analysis Tool</AssemblyName>
+    <AssemblyOriginatorKeyFile>SQATKeyPair.snk</AssemblyOriginatorKeyFile>
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Molmed.SQAT</RootNamespace>
+    <StartupObject>
+    </StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <SignAssembly>true</SignAssembly>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>true</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>false</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>none</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Name>System.Drawing</Name>
+    </Reference>
+    <Reference Include="System.Windows.Forms">
+      <Name>System.Windows.Forms</Name>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ChiasmaObjects\BackgroundWorkerDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChiasmaObjects\BackgroundWorkerDialog.Designer.cs">
+      <DependentUpon>BackgroundWorkerDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChiasmaObjects\ConnectDatabaseException.cs" />
+    <Compile Include="ChiasmaObjects\DataAlreadyDefinedException.cs" />
+    <Compile Include="ChiasmaObjects\DataArgumentEmptyException.cs" />
+    <Compile Include="ChiasmaObjects\DataArgumentException.cs" />
+    <Compile Include="ChiasmaObjects\DataArgumentLengthException.cs" />
+    <Compile Include="ChiasmaObjects\DataArgumentNullException.cs" />
+    <Compile Include="ChiasmaObjects\DataBarCode.cs" />
+    <Compile Include="ChiasmaObjects\DataComment.cs" />
+    <Compile Include="ChiasmaObjects\DataException.cs" />
+    <Compile Include="ChiasmaObjects\Individual.cs" />
+    <Compile Include="ChiasmaObjects\InternalReportAlreadyDefinedException.cs" />
+    <Compile Include="ChiasmaObjects\InternalReportManager.cs" />
+    <Compile Include="ChiasmaObjects\Sample.cs" />
+    <Compile Include="ChiasmaObjects\UserCanceledException.cs" />
+    <Compile Include="ChiasmaObjects\UserManager.cs" />
+    <Compile Include="ClientObjects\CIStringCollection.cs" />
+    <Compile Include="ClientObjects\Comparison.cs" />
+    <Compile Include="ClientObjects\ComparisonHarmonizer.cs" />
+    <Compile Include="ClientObjects\ComparisonPrescanInfo.cs" />
+    <Compile Include="ClientObjects\ComparisonReportGenerator.cs" />
+    <Compile Include="ClientObjects\ComparisonSettings.cs" />
+    <Compile Include="ClientObjects\Identification.cs" />
+    <Compile Include="ClientObjects\IdentificationReportGenerator.cs" />
+    <Compile Include="ClientObjects\InvestigationReportGenerator.cs" />
+    <Compile Include="ClientObjects\InvestigationSourceInfo.cs" />
+    <Compile Include="ClientObjects\FormattedColumn.cs" />
+    <Compile Include="ClientObjects\GenotypeCollection.cs" />
+    <Compile Include="ClientObjects\GenotypeDictionary.cs" />
+    <Compile Include="ClientObjects\GenotypeResultCollection.cs" />
+    <Compile Include="ClientObjects\GenotypeResultPairCollection.cs" />
+    <Compile Include="ClientObjects\IdentificationPrescanInfo.cs" />
+    <Compile Include="ClientObjects\IdentificationSettings.cs" />
+    <Compile Include="ClientObjects\Investigation.cs" />
+    <Compile Include="ChiasmaObjects\ChiasmaUser.cs" />
+    <Compile Include="ChiasmaObjects\DataIdentifier.cs" />
+    <Compile Include="ChiasmaObjects\DataIdentity.cs" />
+    <Compile Include="ChiasmaObjects\InternalReport.cs" />
+    <Compile Include="GUI\AboutDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\AboutDialog.Designer.cs">
+      <DependentUpon>AboutDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\AdvancedCheckedListBox2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\AdvancedCheckedListBox2.Designer.cs">
+      <DependentUpon>AdvancedCheckedListBox2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\AdvancedListView2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\AdvancedListView2.Designer.cs">
+      <DependentUpon>AdvancedListView2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DBObjects\AssayGroup.cs" />
+    <Compile Include="AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GUI\CheckedListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ClientObjects\Configuration.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GUI\ComparisonSettingsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ComparisonSettingsForm.Designer.cs">
+      <DependentUpon>ComparisonSettingsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\ComparisonSource.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\ComparisonSource.Designer.cs">
+      <DependentUpon>ComparisonSource.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\ConnectionManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\GetInternalReportNameDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\GetInternalReportNameDialog.Designer.cs">
+      <DependentUpon>GetInternalReportNameDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\GridlineListView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="GUI\GridlineListView.Designer.cs">
+      <DependentUpon>GridlineListView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\InvestigationReportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\InvestigationReportForm.Designer.cs">
+      <DependentUpon>InvestigationReportForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\IdentificationSettingsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\IdentificationSettingsForm.Designer.cs">
+      <DependentUpon>IdentificationSettingsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\ItemSuccessCutoffForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ItemSuccessCutoffForm.Designer.cs">
+      <DependentUpon>ItemSuccessCutoffForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChiasmaObjects\ShowErrorDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChiasmaObjects\ShowErrorDialog.Designer.cs">
+      <DependentUpon>ShowErrorDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChiasmaObjects\ChiasmaBase.cs" />
+    <Compile Include="ChiasmaObjects\ChiasmaData.cs" />
+    <Compile Include="ChiasmaObjects\DataReader.cs" />
+    <Compile Include="ServiceObjects\DataServer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ClientObjects\ExperimentQueue.cs" />
+    <Compile Include="ChiasmaObjects\DataServerGTDB2.cs" />
+    <Compile Include="ServiceObjects\FileServer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ClientObjects\FilterIndicator.cs" />
+    <Compile Include="ServiceObjects\GenotypeFetcher.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DBObjects\GenotypeGroup.cs" />
+    <Compile Include="GUI\GenotypeListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\GetNumberForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DBObjects\IdentifiableGroup.cs" />
+    <Compile Include="DBObjects\Identifiable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GUI\ListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DBObjects\ApprovedSession.cs" />
+    <Compile Include="GUI\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DBObjects\MarkerGroup.cs" />
+    <Compile Include="ServiceObjects\MessageManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ServiceObjects\ObjectServer.cs" />
+    <Compile Include="DBObjects\Plate.cs" />
+    <Compile Include="GUI\PlateForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\PlateGrid.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DBObjects\PlateGroup.cs" />
+    <Compile Include="ClientObjects\Preferences.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GUI\PreferencesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DBObjects\Project.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\ReportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ServiceObjects\ReportGenerator.cs" />
+    <Compile Include="ClientObjects\ReportSettings.cs" />
+    <Compile Include="GUI\RerunForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\RerunListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ClientObjects\RerunSettings.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ClientObjects\ResultTable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DBObjects\SampleGroup.cs" />
+    <Compile Include="DBObjects\SavedSession.cs" />
+    <Compile Include="GUI\SessionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DBObjects\SessionItem.cs" />
+    <Compile Include="GUI\SessionNameForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ClientObjects\SessionSettings.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GUI\SessionSettingsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChiasmaObjects\SqlCommandBuilder.cs" />
+    <Compile Include="Starter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GUI\StartSessionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\StaticListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DBObjects\IndividualGroup.cs" />
+    <Compile Include="ServiceObjects\TabDelimiter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GUI\UpdateableListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <EmbeddedResource Include="ChiasmaObjects\BackgroundWorkerDialog.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>BackgroundWorkerDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\AboutDialog.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>AboutDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\AdvancedCheckedListBox2.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>AdvancedCheckedListBox2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\AdvancedListView2.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>AdvancedListView2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\CheckedListForm.resx">
+      <DependentUpon>CheckedListForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ComparisonSettingsForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ComparisonSettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ComparisonSource.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ComparisonSource.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ConnectionManager.resx">
+      <DependentUpon>ConnectionManager.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\GetInternalReportNameDialog.resx">
+      <DependentUpon>GetInternalReportNameDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\GridlineListView.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>GridlineListView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\GenotypeListForm.resx">
+      <DependentUpon>GenotypeListForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\GetNumberForm.resx">
+      <DependentUpon>GetNumberForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\IdentificationSettingsForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>IdentificationSettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ItemSuccessCutoffForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ItemSuccessCutoffForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ListForm.resx">
+      <DependentUpon>ListForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\PlateForm.resx">
+      <DependentUpon>PlateForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\PlateGrid.resx">
+      <DependentUpon>PlateGrid.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\PreferencesForm.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\InvestigationReportForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>InvestigationReportForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ReportForm.resx">
+      <DependentUpon>ReportForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\RerunForm.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\RerunListForm.resx">
+      <DependentUpon>RerunListForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\SessionForm.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\SessionNameForm.resx">
+      <DependentUpon>SessionNameForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\SessionSettingsForm.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\StartSessionForm.resx">
+      <DependentUpon>StartSessionForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\StaticListForm.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\UpdateableListForm.resx">
+      <DependentUpon>UpdateableListForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="SQATApplication.ico" />
+    <Content Include="SQATconfig.xml" />
+    <Content Include="SQATconnect.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="SQATKeyPair.snk" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>
