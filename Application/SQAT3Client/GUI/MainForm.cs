@@ -7,6 +7,7 @@ using System.Windows.Forms;
 using System.Data;
 using Molmed.SQAT.ClientObjects;
 using Molmed.SQAT.DBObjects;
+using Molmed.SQAT.Properties;
 using Molmed.SQAT.ServiceObjects;
 
 namespace Molmed.SQAT.GUI
@@ -75,7 +76,20 @@ namespace Molmed.SQAT.GUI
 			MyConnectionString = connectionString;
 			MyStatusBar.Panels[0].Text = DataServer.GetDatabaseName(connectionString);
 			MyStatusBar.Panels[1].Text = DataServer.GetUserName(connectionString);
+            SetBackground(connectionString);
 		}
+
+	    private void SetBackground(string connectionString)
+	    {
+	        if (connectionString.ToLower().Contains("devel"))
+	        {
+	            BackgroundImage = Resources.DevelBackground;
+	        }
+            else if (connectionString.ToLower().Contains("practice"))
+	        {
+	            BackgroundImage = Resources.ValidationBackground;
+	        }
+	    }
 
 		/// <summary>
 		/// Clean up any resources being used.
