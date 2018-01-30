@@ -1,6 +1,7 @@
 using System;
 using System.Drawing;
 using System.Collections;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Windows.Forms;
 using System.Data;
@@ -1061,6 +1062,23 @@ namespace Molmed.SQAT.GUI
             StopButton.Enabled = !readyForInput;
         }
 
+	    private void LogResultPlates(string action)
+	    {
+            var selectedPlates = new List<string>();
+            for (int i = 0; i < SelectedGroupsList.Items.Count; i++)
+            {
+                var item = SelectedGroupsList.Items[i];
+                if (item.Tag is Plate)
+                {
+                    selectedPlates.Add(item.Text);
+                }
+            }
+	        foreach (var selectedPlate in selectedPlates)
+	        {
+                MyDataServer.LogResultPlate(selectedPlate, action);
+            }
+        }
+
         private void Finish()
         {
             bool loadError;
@@ -1087,6 +1105,7 @@ namespace Molmed.SQAT.GUI
                     MessageManager.ShowInformation("Please select at least one plate or plate working set.", this);
                     return;
                 }
+                LogResultPlates("Open unsaved session");
             }
 
             //Insert selections into temporary database tables.
@@ -1103,6 +1122,7 @@ namespace Molmed.SQAT.GUI
                 {
                     MessageManager.ShowWarning("All settings were not properly loaded.", this);
                 }
+                MyDataServer.LogResultPlatesInSession(MySessionName, "Open session");
             }
             else
             {

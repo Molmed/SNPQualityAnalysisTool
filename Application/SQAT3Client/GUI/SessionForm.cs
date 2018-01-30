@@ -1770,6 +1770,7 @@ namespace Molmed.SQAT.GUI
 
 			this.Cursor = Cursors.WaitCursor;
 			MyDataServer.SaveNormalSession(MySessionSettings, projectName, sessionName, description);
+            MyDataServer.LogResultPlatesInSession(sessionName, "Save session");
 			this.Cursor = Cursors.Default;
 			this.Text = sessionName;
 		}
