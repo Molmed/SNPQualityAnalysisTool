@@ -1,0 +1,18 @@
+Item1MissingValue	ExpMissingValue	*/*
+item2missingvalue	expmissingvalue	*/*
+
+ItemDuplicateFailure	ExpDuplicateFailure	A/A
+ItemDuplicateFailure	ExpDuplicateFailure	A/c
+
+
+ItemOnlyInSource1	ExpOnlyInSource1	A/A
+
+ItemIdentical1	ExpIdentical1	a/A
+ItemIdentical2	ExpIdentical2	A/c
+ItemIdentical3	ExpIdentical3	x/x
+ItemIdentical4	ExpIdentical4	x/y
+
+ItemDifferent1	ExpDifferent1	A/a
+ItemDifferent2	ExpDifferent2	a/C
+ItemDifferent3	ExpDifferent3	x/X
+ItemDifferent4	ExpDifferent4	Y/X

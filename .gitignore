@@ -1,0 +1,6 @@
+/application/.vs
+/application/sqat3client/bin
+/application/sqat3client/obj
+*.tmp
+*dotsettings.user
+*ssms_suo

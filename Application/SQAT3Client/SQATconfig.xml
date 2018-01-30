@@ -1,0 +1,35 @@
+<?xml version="1.0" standalone="yes"?>
+<Configuration>
+  <Item>
+    <Key>isolationlevel</Key>
+    <Value>read committed</Value>
+  </Item>
+  <Item>
+    <Key>versioncontrolflag</Key>
+    <Value>true</Value>
+  </Item>
+  <Item>
+    <Key>allowunlockflag</Key>
+    <Value>false</Value>
+  </Item>
+  <Item>
+    <Key>asynctimeout</Key>
+    <Value>0</Value>
+  </Item>
+  <Item>
+    <Key>synctimeout</Key>
+    <Value>0</Value>
+  </Item>
+  <Item>
+    <Key>experimentbatchsize</Key>
+    <Value>100</Value>
+  </Item>
+  <Item>
+    <Key>listrowlimit</Key>
+    <Value>65536</Value>
+  </Item>
+  <Item>
+    <Key>listcolumnlimit</Key>
+    <Value>256</Value>
+  </Item>  
+</Configuration>
