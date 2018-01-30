@@ -454,6 +454,8 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\DevelBackground.PNG" />
+    <None Include="Resources\ValidationBackground.PNG" />
     <Content Include="SQATApplication.ico" />
     <Content Include="SQATconfig.xml" />
     <Content Include="SQATconnect.xml" />
@@ -489,6 +491,7 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PreBuildEvent>
