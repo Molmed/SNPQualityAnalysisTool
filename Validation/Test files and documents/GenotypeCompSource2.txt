@@ -1,0 +1,21 @@
+Item1MissingValue	ExpMissingValue	*/*
+item2missingvalue	expmissingvalue	*/*
+
+ItemDuplicateFailure	ExpDuplicateFailure	C/c
+itemDuplicateFailure	ExpDuplicateFailure	c/A
+
+ItemOnlyInSource2	ExpOnlyInSource2	A/A
+
+ItemUnknownAlleles	ExpUnknownAlleles	y/Y
+
+ItemIdentical1	ExpIdentical1	c/c
+ItemIdentical2	ExpIdentical2	g/c
+ItemIdentical3	ExpIdentical3	t/a
+ItemIdentical4	ExpIdentical4	T/T
+
+ItemDifferent1	ExpDifferent1	c/g
+ItemDifferent2	ExpDifferent2	c/C
+ItemDifferent3	ExpDifferent3	t/T
+ItemDifferent4	ExpDifferent4	t/a
+
+

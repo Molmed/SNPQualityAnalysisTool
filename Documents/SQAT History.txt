@@ -1,0 +1,206 @@
+SNP Quality Analysis Tool History
+---------------------------------
+
+v 2.0.2137.21508
+
+* Created.
+
+
+v 2.0.2138.16385
+
+* Minor changes in the GUI.
+
+
+v 2.0.2141.29058
+
+* An error which calculated allele frequencies wrongly when any of
+the number of homozygotes or the number of heterozygotes were zero
+was corrected.
+
+
+v 2.1.2172.17064
+
+* The program uses a simplified and more tailor-suited database schema.
+
+* The user is able to select database from a list of possible connections,
+as entered in the "SQATconnect.xml" file.
+
+* The names of the database and the user are displayed in the main window.
+
+* When the program starts, it makes sure that the current user is
+listed in the database.
+
+* All control samples are left unrejected when rejecting samples in
+a plate, no matter if the rejection is based on wells, genotyping
+success rates for assays or genotyping success rates for samples.
+
+* An approved session can be unlocked by the user.
+
+* The program no longer crashes if there is no project in the database.
+
+* It is possible to create lists of both subjects and samples to rerun.
+
+
+-----------
+
+v 3.0.2490.13058
+
+* Redesigned database and quality control procedures for more efficient computations.
+This includes making a selection for marker or assay and sample or individual when
+starting a new session.
+
+* It is possible to create a report directly from the database without showing the results
+on screen.
+
+* The genotyping success per well can be viewed when inspecting individual plates.
+
+* All genotypes from selected samples or individuals can be more easily rejected.
+
+* There are more alternatives regarding which information should be included in a saved report.
+
+* It is possible to view which selections of plates and working sets have
+been made from within an ongoing session.
+
+* A dedicated menu for performing operations on all markers/assays has been added.
+
+* Genotypes from selected samples/individuals and controls can be viewed more easily.
+
+...and more
+
+
+v 3.0.2517.26082
+
+* Corrected error in previous version which gave no difference in the HW chi2 value with
+or without children if the the inheritance test was turned off.
+
+* Changed the text file format to include tabs for all fields, also when the rest of a row
+is empty.
+
+* The chromosome name is included in the experiment statistics list.
+
+* Introduced a workaround to correct the bug with gridline repainting in the .NET ListView
+control. Now gridlines are showed correctly.
+
+* Corrected error in previous version which occurred when sample workingsets were selected.
+ 
+* Corrected error in previous version which occurred when trying to reject items or wells with
+low success rate in plates when using individual mode.
+
+* A default value of "*/*" was set for empty results.
+
+
+v 3.0.2545.21232
+
+* Corrected two stability problems which previously could result in an error message ("There is
+already an open data reader associated with this command which must be closed first") or the
+calculations showing no results.
+
+
+v 3.1.2614.15628
+
+* The possibility to compare genotypes between open sessions, files and reference data sets
+in the database has been added.
+
+* A new preference setting has been added which makes it possible to filter the displayed
+experiments in the Experiments list, so that the number of shown experiments can be limited
+after sorting them on the database side.
+
+* The way that control items and projects are represented in the database has been changed.
+
+* Corrected an error in the result report which only showed the first item if there was only
+one experiment in the open session or only the first experiment if there was only one item
+in the open session and the experiments were listed in columns and rows respectively.
+
+* Corrected an error which gave chromosome X warnings for male individuals with two different
+samples with e.g. A/A and G/G, even though there were no heterozygotes.
+
+
+v 3.1.2669.13199
+
+* Project permissions are implemented.
+
+* The program no longer crashes when a comparison between genotypes in different data sets
+is aborted.
+
+* The function for comparison of genotypes between different data sets is much faster. 
+
+* The filter for the number of experiments to be displayed only fetches the displayed
+experiments from the database, instead of all experiments.
+
+* It is possible to set the genotype status to both load and rejected for selected experiments,
+all experiments, selected items and selected control items.
+
+
+v 3.1.2732.27181
+
+* Faster implementation of the inheritance test for SQL Server 2005.
+
+
+v 3.1.3050.17232
+
+<Never released>
+
+
+v 3.1.3055.16570
+
+<Never released>
+
+
+v 3.1.3055.17176
+
+* An "about" box was added.
+
+* Any dependency on nucleotides being only "A", "C", "G" or "T" has been removed
+to allow also for insertion and deletion polymorphisms.
+
+* The export of XML report files was changed to contain all information needed by
+internal reports in the Chiasma program.
+
+
+v 3.2.3090.13120
+
+* A function was added for identifying samples or individuals by comparing the
+genotype results over all markers/assays.
+
+* It is possible to set the status for genotypes in specific wells also to "load" and
+not only to "rejected".
+
+* When you save or approve a session the program opens the project to which the plates
+of the session belong in the "Save as" dialog.
+
+* It is possible to see the trios or duos which failed in the inheritance test for
+all or selected experiments.
+
+* A new column was added in the item statistics list for success rate over nonfailed
+experiments. It is also possible to select this column for cutoff.
+
+v 3.2.3818.16498
+
+* Option to upload internal report directly into the chiasma database instead of saving an
+internal report file. Both ways to save an internal report (into database or to file) is 
+available at the File menu. The button save internal report now refers to save to the database.
+ 
+v 3.2.4535.18838
+
+* Bugfix, a timeout property (SqlBulkCopy, bulkCopyTimeout) is set to prevent timeout exception when
+  uploading large internal reports to the Chiasma database.
+
+v 3.2.4860.19855
+(Never released)
+
+23/4 2013
+v 3.2.4861.21063
+* Reports based on samples (not individuals) can be imported into Chiasma. For 
+  these reports, inheritance tests is only performed on inh-control samples. 
+  Total number and number of failed ctl-inh-test for a marker is counted
+  in the same way as if the report was based on individuals. 
+* Bugfix: report based on samples can be exported into XML-format without any syntax errors.
+* Default string for missing genotype is -/- instead of */* in identify items and compare results
+
+29/10 2013
+v 3.2.5050.23810
+* The connection is against the new server, mm-wchs001
+
+11/2 2015
+v 3.2.5520.23433
+* Bugfix, uploading internal reports to Chiasma database, class Sample load fields tube_id and plate_id instead of container_id

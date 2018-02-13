@@ -1,0 +1,20 @@
+ItemX	Exp1	A/A
+ItemX	Exp2	A/c
+ItemX	Exp3	A/c
+ItemX	Exp4	C/C
+ItemA	Exp1	a/a
+ItemA	Exp2	A/c
+ItemA	Exp3	A/C
+ItemA	Exp4	*/*
+ItemB	Exp1	a/C
+ItemB	Exp2	A/C
+ItemB	Exp3	A/C
+ItemB	Exp4	*/*
+ItemC	Exp1	A/C
+ItemC	Exp2	Y/x
+ItemC	Exp3	X/X
+ItemC	Exp4	*/*
+ItemD	Exp1	A/C
+ItemD	Exp2	A/A
+ItemD	Exp3	C/C
+
