@@ -1,0 +1,9 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Molmed.SQAT.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="SNP_Quality_Analysis_Tool_ResultWebService_ResultWebService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://mm-wchs001:65203/ChiasmaResultServiceDevelopment/ResultWebService.asmx</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
