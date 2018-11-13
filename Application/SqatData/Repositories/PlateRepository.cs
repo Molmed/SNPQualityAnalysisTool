@@ -16,7 +16,7 @@ namespace SqatData.Repositories
 
         public List<Plate> GetPlatesBySession(string sessionName)
         {
-            var sql = $"exec pSQAT_GetResultPlatesForSession {sessionName}";
+            var sql = $"exec pSQAT_GetResultPlatesForSession '{sessionName}'";
             var plates = _context.Plates.FromSql(sql);
             return plates.ToList();
         }

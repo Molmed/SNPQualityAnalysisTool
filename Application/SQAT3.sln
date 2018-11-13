@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SQAT3Client", "SQAT3Client\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SqatData", "SqatData\SqatData.csproj", "{30F0BCBB-2871-462A-BFA7-1F8608F6EC93}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SqatData.Test", "SqatData.Test\SqatData.Test.csproj", "{CEA43247-E641-49E1-BDC4-35664F872EF5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{30F0BCBB-2871-462A-BFA7-1F8608F6EC93}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{30F0BCBB-2871-462A-BFA7-1F8608F6EC93}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{30F0BCBB-2871-462A-BFA7-1F8608F6EC93}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CEA43247-E641-49E1-BDC4-35664F872EF5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CEA43247-E641-49E1-BDC4-35664F872EF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CEA43247-E641-49E1-BDC4-35664F872EF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CEA43247-E641-49E1-BDC4-35664F872EF5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,7 +1,5 @@
-﻿using System;
-using System.Configuration;
+﻿using System.Configuration;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata;
 using SqatData.Entities;
 
 namespace SqatData
@@ -19,7 +17,7 @@ namespace SqatData
         {
         }
 
-        public virtual DbSet<Plate> Plates { get; set; }
+        public virtual DbQuery<Plate> Plates { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
