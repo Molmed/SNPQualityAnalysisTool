@@ -248,6 +248,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="ClientObjects\FilterIndicator.cs" />
+    <Compile Include="ServiceObjects\GdprLogger.cs" />
     <Compile Include="ServiceObjects\GenotypeFetcher.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -343,6 +344,7 @@
     <Compile Include="GUI\UpdateableListForm.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Repositories2\UserRepository.cs" />
     <Compile Include="Web References\ResultWebService\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

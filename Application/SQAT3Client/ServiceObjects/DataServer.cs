@@ -861,12 +861,6 @@ namespace Molmed.SQAT.ServiceObjects
 			}
 		}
 
-	    public void LogResultPlate(string plateName, string action)
-	    {
-            var cmd = $"exec p_LogSession '{plateName}', '{action}'";
-            ExecuteSync(cmd);
-	    }
-
 	    public void LogResultPlatesInSession(string sessionName, string action)
 	    {
 	        var cmd = $"exec p_LogSessionByWset '{sessionName}', '{action}'";
