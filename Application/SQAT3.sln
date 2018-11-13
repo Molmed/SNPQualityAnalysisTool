@@ -1,18 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2026
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SQAT3Client", "SQAT3Client\SQAT3Client.csproj", "{7ADE55CE-150F-40E5-8DF0-F28D0095F82F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SqatData", "SqatData\SqatData.csproj", "{30F0BCBB-2871-462A-BFA7-1F8608F6EC93}"
+EndProject
 Global
-	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 2
-		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-		SccTeamFoundationServer = http://mm-wchs001:8080/tfs/defaultcollection
-		SccLocalPath0 = .
-		SccProjectUniqueName1 = SQAT3Client\\SQAT3Client.csproj
-		SccProjectName1 = SQAT3Client
-		SccLocalPath1 = SQAT3Client
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
@@ -22,8 +17,15 @@ Global
 		{7ADE55CE-150F-40E5-8DF0-F28D0095F82F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7ADE55CE-150F-40E5-8DF0-F28D0095F82F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7ADE55CE-150F-40E5-8DF0-F28D0095F82F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{30F0BCBB-2871-462A-BFA7-1F8608F6EC93}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{30F0BCBB-2871-462A-BFA7-1F8608F6EC93}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{30F0BCBB-2871-462A-BFA7-1F8608F6EC93}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{30F0BCBB-2871-462A-BFA7-1F8608F6EC93}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C38BC8EC-5057-4889-903D-6029BC9839A1}
 	EndGlobalSection
 EndGlobal

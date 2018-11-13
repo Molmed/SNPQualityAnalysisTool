@@ -534,6 +534,12 @@
       <CachedSettingsPropName>SNP_Quality_Analysis_Tool_ResultWebService_ResultWebService</CachedSettingsPropName>
     </WebReferenceUrl>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SqatData\SqatData.csproj">
+      <Project>{30f0bcbb-2871-462a-bfa7-1f8608f6ec93}</Project>
+      <Name>SqatData</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PreBuildEvent>
