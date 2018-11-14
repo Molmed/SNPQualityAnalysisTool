@@ -1073,7 +1073,7 @@ namespace Molmed.SQAT.GUI
             }
 	        foreach (var selectedPlate in selectedPlates)
 	        {
-                gdprLogger.LogEvent(selectedPlate, action, userRepo.GetCurrentUserName());
+                gdprLogger.LogResultPlateOpened(selectedPlate, action, userRepo.GetCurrentUserName());
             }
         }
 
@@ -1120,7 +1120,10 @@ namespace Molmed.SQAT.GUI
                 {
                     MessageManager.ShowWarning("All settings were not properly loaded.", this);
                 }
-                MyDataServer.LogResultPlatesInSession(MySessionName, "Open session");
+                var logger = new GdprLogger();
+                var userRepo = new UserRepository(MyDataServer);
+                logger.LogSessionEvent(MySessionName, "Open sqat session", 
+                    userRepo.GetCurrentUserName(), MyDataServer.PlateRepository);
             }
             else
             {

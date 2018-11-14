@@ -6,6 +6,8 @@ using System.Runtime.CompilerServices;
 using System.Threading;
 using Molmed.SQAT.ClientObjects;
 using Molmed.SQAT.DBObjects;
+using SqatData;
+using SqatData.Repositories;
 
 namespace Molmed.SQAT.ServiceObjects
 {
@@ -23,6 +25,9 @@ namespace Molmed.SQAT.ServiceObjects
         public const int ITEM_STAT_TABLE_INDEX = 1;
         public const int CONTROL_ITEM_STAT_TABLE_INDEX = 2;
 
+	    private string _connectionString;
+
+	    public PlateRepository PlateRepository { get; private set; }
 		//Declare event which fires when some change has occurred with
 		//the pending genotype statuses (either new pending changes or a submission).
 		public event EventHandler GenotypeStatusChange;
@@ -110,9 +115,15 @@ namespace Molmed.SQAT.ServiceObjects
 			MySyncTimeout = syncTimeout;
 			MyAsyncTimeout = asyncTimeout;
 			MyDataDeliveryFlag = false;
-            
+		    _connectionString = connectionString;
+            PlateRepository = new PlateRepository(GetDatabaseName(connectionString));
 			ExecuteSync("SET TRANSACTION ISOLATION LEVEL " + isolationLevel);
 		}
+
+	    public string GetDatabaseName()
+	    {
+	        return GetDatabaseName(_connectionString);
+	    }
 
         public void SetDataAsyncEventHandlers(EventHandler dataReadyHandler, ThreadExceptionEventHandler dataErrorHandler)
         {
@@ -860,13 +871,6 @@ namespace Molmed.SQAT.ServiceObjects
 				throw (e);
 			}
 		}
-
-	    public void LogResultPlatesInSession(string sessionName, string action)
-	    {
-	        var cmd = $"exec p_LogSessionByWset '{sessionName}', '{action}'";
-            ExecuteSync(cmd);
-	    }
-
 
 		public void SaveNormalSession(SessionSettings settings, string project, string name, string description)
 		{
