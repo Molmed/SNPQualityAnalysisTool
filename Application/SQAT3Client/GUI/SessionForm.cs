@@ -11,6 +11,7 @@ using Molmed.SQAT.ClientObjects;
 using Molmed.SQAT.DBObjects;
 using Molmed.SQAT.ServiceObjects;
 using Molmed.SQAT.ChiasmaObjects;
+using Molmed.SQAT.Repositories2;
 
 
 namespace Molmed.SQAT.GUI
@@ -1770,7 +1771,9 @@ namespace Molmed.SQAT.GUI
 
 			this.Cursor = Cursors.WaitCursor;
 			MyDataServer.SaveNormalSession(MySessionSettings, projectName, sessionName, description);
-            MyDataServer.LogResultPlatesInSession(sessionName, "Save session");
+            var logger = new GdprLogger();
+		    var userRepo = new UserRepository(MyDataServer);
+            logger.LogSessionEvent(sessionName, "Save sqat session", userRepo.GetCurrentUserName(), MyDataServer.PlateRepository);
 			this.Cursor = Cursors.Default;
 			this.Text = sessionName;
 		}
