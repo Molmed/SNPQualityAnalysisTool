@@ -1,15 +1,11 @@
 using System;
-using System.Drawing;
-using System.Collections;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Windows.Forms;
 using System.Data;
-using System.Data.SqlClient;
-using System.Data.Common;
 using System.Threading;
 using Molmed.SQAT.ClientObjects;
 using Molmed.SQAT.DBObjects;
+using Molmed.SQAT.Repositories2;
 using Molmed.SQAT.ServiceObjects;
 
 
@@ -1064,6 +1060,8 @@ namespace Molmed.SQAT.GUI
 
 	    private void LogResultPlates(string action)
 	    {
+	        var gdprLogger = new GdprLogger();
+            var userRepo = new UserRepository(MyDataServer);
             var selectedPlates = new List<string>();
             for (int i = 0; i < SelectedGroupsList.Items.Count; i++)
             {
@@ -1075,7 +1073,7 @@ namespace Molmed.SQAT.GUI
             }
 	        foreach (var selectedPlate in selectedPlates)
 	        {
-                MyDataServer.LogResultPlate(selectedPlate, action);
+                gdprLogger.LogResultPlateOpened(selectedPlate, action, userRepo.GetCurrentUserName());
             }
         }
 
@@ -1105,7 +1103,7 @@ namespace Molmed.SQAT.GUI
                     MessageManager.ShowInformation("Please select at least one plate or plate working set.", this);
                     return;
                 }
-                LogResultPlates("Open unsaved session");
+                LogResultPlates("Open unsaved sqat session");
             }
 
             //Insert selections into temporary database tables.
@@ -1122,7 +1120,10 @@ namespace Molmed.SQAT.GUI
                 {
                     MessageManager.ShowWarning("All settings were not properly loaded.", this);
                 }
-                MyDataServer.LogResultPlatesInSession(MySessionName, "Open session");
+                var logger = new GdprLogger();
+                var userRepo = new UserRepository(MyDataServer);
+                logger.LogSessionEvent(MySessionName, "Open sqat session", 
+                    userRepo.GetCurrentUserName(), MyDataServer.PlateRepository);
             }
             else
             {

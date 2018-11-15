@@ -3,6 +3,18 @@
   <Items>
     <LogicalFolder Name="Connections" Type="2" Sorted="true">
       <Items>
+        <ConnectionNode Name="MM-WCHS001:devel_edvard">
+          <Created>2018-11-13T14:39:50.4477594+01:00</Created>
+          <Type>SQL</Type>
+          <Server>MM-WCHS001</Server>
+          <UserName>devel_edvard</UserName>
+          <Authentication>SQL</Authentication>
+          <InitialDB>QC_devel</InitialDB>
+          <LoginTimeout>15</LoginTimeout>
+          <ExecutionTimeout>0</ExecutionTimeout>
+          <ConnectionProtocol>NotSpecified</ConnectionProtocol>
+          <ApplicationName>Microsoft SQL Server Management Studio - Query</ApplicationName>
+        </ConnectionNode>
         <ConnectionNode Name="MM-WCHS001:USER\edeng655">
           <Created>2013-10-02T17:54:57.5993886+02:00</Created>
           <Type>SQL</Type>
@@ -66,6 +78,12 @@
           <AssociatedConnSrvName>MM-WCHS001</AssociatedConnSrvName>
           <AssociatedConnUserName />
           <FullPath>pSQAT_GetRerunItems.sql</FullPath>
+        </FileNode>
+        <FileNode Name="pSQAT_GetResultPlatesForSession.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:MM-WCHS001:False:devel_edvard</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>MM-WCHS001</AssociatedConnSrvName>
+          <AssociatedConnUserName>devel_edvard</AssociatedConnUserName>
+          <FullPath>pSQAT_GetResultPlatesForSession.sql</FullPath>
         </FileNode>
         <FileNode Name="pSQAT_RejectMinority.sql">
           <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:MM-WCHS001:True</AssociatedConnectionMoniker>

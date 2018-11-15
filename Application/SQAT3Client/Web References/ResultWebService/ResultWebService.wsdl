@@ -1,0 +1,919 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="Molmed.Chiasma" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="Molmed.Chiasma" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="Molmed.Chiasma">
+      <s:element name="GetMethods">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetMethodsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetMethodsResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ResultPlateNameChanged">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="oldName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="newName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="callingDatabase" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="timestamp" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ResultPlateNameChangedResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="LogGenotypeExport">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="internalReportId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="path" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="nameOfUser" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="date" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="database" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LogGenotypeExportResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="LogSqatEvent">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="resultPlateName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="changedAction" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="nameOfUser" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="date" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LogSqatEventResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetDataSets">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="method" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDataSetsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDataSetsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSubsets">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="method" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dataSets" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSubsetsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSubsetsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HasSubsets">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="method" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HasSubsetsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="HasSubsetsResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDataSetInfoName">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="method" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDataSetInfoNameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDataSetInfoNameResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSubsetInfoName">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="method" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSubsetInfoNameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSubsetInfoNameResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsValidDataSetInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="method" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="info" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsValidDataSetInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IsValidDataSetInfoResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsValidSubsetInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="method" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="info" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsValidSubsetInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IsValidSubsetInfoResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetInternalDataSetNames">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="method" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="project" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dataSetName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="subsetNames" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="dataSetInfo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="subsetInfo" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetInternalDataSetNamesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetInternalDataSetNamesResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsBulkMethod">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="method" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsBulkMethodResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IsBulkMethodResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoadDataGetTicket">
+        <s:complexType />
+      </s:element>
+      <s:element name="LoadDataGetTicketResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LoadDataGetTicketResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoadDataGetSamples">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ticket" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoadDataGetSamplesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LoadDataGetSamplesResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoadDataGetAssays">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ticket" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoadDataGetAssaysResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LoadDataGetAssaysResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoadDataExtractSets">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ticket" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="method" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="project" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dataSetNames" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="subsetNames" type="tns:ArrayOfArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="dataSetInfo" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="subsetInfo" type="tns:ArrayOfArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ArrayOfString" nillable="true" type="tns:ArrayOfString" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="LoadDataExtractSetsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LoadDataExtractSetsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoadDataGetTotalSize">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ticket" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoadDataGetTotalSizeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="LoadDataGetTotalSizeResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoadDataGetSetSize">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ticket" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="dataSetId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoadDataGetSetSizeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="LoadDataGetSetSizeResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoadDataGetChunk">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ticket" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="dataSetId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="start" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="chunkSize" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoadDataGetChunkResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LoadDataGetChunkResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoadDataCleanUp">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ticket" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoadDataCleanUpResponse">
+        <s:complexType />
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetMethodsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMethods" />
+  </wsdl:message>
+  <wsdl:message name="GetMethodsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMethodsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ResultPlateNameChangedSoapIn">
+    <wsdl:part name="parameters" element="tns:ResultPlateNameChanged" />
+  </wsdl:message>
+  <wsdl:message name="ResultPlateNameChangedSoapOut">
+    <wsdl:part name="parameters" element="tns:ResultPlateNameChangedResponse" />
+  </wsdl:message>
+  <wsdl:message name="LogGenotypeExportSoapIn">
+    <wsdl:part name="parameters" element="tns:LogGenotypeExport" />
+  </wsdl:message>
+  <wsdl:message name="LogGenotypeExportSoapOut">
+    <wsdl:part name="parameters" element="tns:LogGenotypeExportResponse" />
+  </wsdl:message>
+  <wsdl:message name="LogSqatEventSoapIn">
+    <wsdl:part name="parameters" element="tns:LogSqatEvent" />
+  </wsdl:message>
+  <wsdl:message name="LogSqatEventSoapOut">
+    <wsdl:part name="parameters" element="tns:LogSqatEventResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDataSetsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDataSets" />
+  </wsdl:message>
+  <wsdl:message name="GetDataSetsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDataSetsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSubsetsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSubsets" />
+  </wsdl:message>
+  <wsdl:message name="GetSubsetsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSubsetsResponse" />
+  </wsdl:message>
+  <wsdl:message name="HasSubsetsSoapIn">
+    <wsdl:part name="parameters" element="tns:HasSubsets" />
+  </wsdl:message>
+  <wsdl:message name="HasSubsetsSoapOut">
+    <wsdl:part name="parameters" element="tns:HasSubsetsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDataSetInfoNameSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDataSetInfoName" />
+  </wsdl:message>
+  <wsdl:message name="GetDataSetInfoNameSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDataSetInfoNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSubsetInfoNameSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSubsetInfoName" />
+  </wsdl:message>
+  <wsdl:message name="GetSubsetInfoNameSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSubsetInfoNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IsValidDataSetInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:IsValidDataSetInfo" />
+  </wsdl:message>
+  <wsdl:message name="IsValidDataSetInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:IsValidDataSetInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IsValidSubsetInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:IsValidSubsetInfo" />
+  </wsdl:message>
+  <wsdl:message name="IsValidSubsetInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:IsValidSubsetInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetInternalDataSetNamesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetInternalDataSetNames" />
+  </wsdl:message>
+  <wsdl:message name="GetInternalDataSetNamesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetInternalDataSetNamesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IsBulkMethodSoapIn">
+    <wsdl:part name="parameters" element="tns:IsBulkMethod" />
+  </wsdl:message>
+  <wsdl:message name="IsBulkMethodSoapOut">
+    <wsdl:part name="parameters" element="tns:IsBulkMethodResponse" />
+  </wsdl:message>
+  <wsdl:message name="LoadDataGetTicketSoapIn">
+    <wsdl:part name="parameters" element="tns:LoadDataGetTicket" />
+  </wsdl:message>
+  <wsdl:message name="LoadDataGetTicketSoapOut">
+    <wsdl:part name="parameters" element="tns:LoadDataGetTicketResponse" />
+  </wsdl:message>
+  <wsdl:message name="LoadDataGetSamplesSoapIn">
+    <wsdl:part name="parameters" element="tns:LoadDataGetSamples" />
+  </wsdl:message>
+  <wsdl:message name="LoadDataGetSamplesSoapOut">
+    <wsdl:part name="parameters" element="tns:LoadDataGetSamplesResponse" />
+  </wsdl:message>
+  <wsdl:message name="LoadDataGetAssaysSoapIn">
+    <wsdl:part name="parameters" element="tns:LoadDataGetAssays" />
+  </wsdl:message>
+  <wsdl:message name="LoadDataGetAssaysSoapOut">
+    <wsdl:part name="parameters" element="tns:LoadDataGetAssaysResponse" />
+  </wsdl:message>
+  <wsdl:message name="LoadDataExtractSetsSoapIn">
+    <wsdl:part name="parameters" element="tns:LoadDataExtractSets" />
+  </wsdl:message>
+  <wsdl:message name="LoadDataExtractSetsSoapOut">
+    <wsdl:part name="parameters" element="tns:LoadDataExtractSetsResponse" />
+  </wsdl:message>
+  <wsdl:message name="LoadDataGetTotalSizeSoapIn">
+    <wsdl:part name="parameters" element="tns:LoadDataGetTotalSize" />
+  </wsdl:message>
+  <wsdl:message name="LoadDataGetTotalSizeSoapOut">
+    <wsdl:part name="parameters" element="tns:LoadDataGetTotalSizeResponse" />
+  </wsdl:message>
+  <wsdl:message name="LoadDataGetSetSizeSoapIn">
+    <wsdl:part name="parameters" element="tns:LoadDataGetSetSize" />
+  </wsdl:message>
+  <wsdl:message name="LoadDataGetSetSizeSoapOut">
+    <wsdl:part name="parameters" element="tns:LoadDataGetSetSizeResponse" />
+  </wsdl:message>
+  <wsdl:message name="LoadDataGetChunkSoapIn">
+    <wsdl:part name="parameters" element="tns:LoadDataGetChunk" />
+  </wsdl:message>
+  <wsdl:message name="LoadDataGetChunkSoapOut">
+    <wsdl:part name="parameters" element="tns:LoadDataGetChunkResponse" />
+  </wsdl:message>
+  <wsdl:message name="LoadDataCleanUpSoapIn">
+    <wsdl:part name="parameters" element="tns:LoadDataCleanUp" />
+  </wsdl:message>
+  <wsdl:message name="LoadDataCleanUpSoapOut">
+    <wsdl:part name="parameters" element="tns:LoadDataCleanUpResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ResultWebServiceSoap">
+    <wsdl:operation name="GetMethods">
+      <wsdl:input message="tns:GetMethodsSoapIn" />
+      <wsdl:output message="tns:GetMethodsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ResultPlateNameChanged">
+      <wsdl:input message="tns:ResultPlateNameChangedSoapIn" />
+      <wsdl:output message="tns:ResultPlateNameChangedSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LogGenotypeExport">
+      <wsdl:input message="tns:LogGenotypeExportSoapIn" />
+      <wsdl:output message="tns:LogGenotypeExportSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LogSqatEvent">
+      <wsdl:input message="tns:LogSqatEventSoapIn" />
+      <wsdl:output message="tns:LogSqatEventSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDataSets">
+      <wsdl:input message="tns:GetDataSetsSoapIn" />
+      <wsdl:output message="tns:GetDataSetsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSubsets">
+      <wsdl:input message="tns:GetSubsetsSoapIn" />
+      <wsdl:output message="tns:GetSubsetsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HasSubsets">
+      <wsdl:input message="tns:HasSubsetsSoapIn" />
+      <wsdl:output message="tns:HasSubsetsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDataSetInfoName">
+      <wsdl:input message="tns:GetDataSetInfoNameSoapIn" />
+      <wsdl:output message="tns:GetDataSetInfoNameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSubsetInfoName">
+      <wsdl:input message="tns:GetSubsetInfoNameSoapIn" />
+      <wsdl:output message="tns:GetSubsetInfoNameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IsValidDataSetInfo">
+      <wsdl:input message="tns:IsValidDataSetInfoSoapIn" />
+      <wsdl:output message="tns:IsValidDataSetInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IsValidSubsetInfo">
+      <wsdl:input message="tns:IsValidSubsetInfoSoapIn" />
+      <wsdl:output message="tns:IsValidSubsetInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetInternalDataSetNames">
+      <wsdl:input message="tns:GetInternalDataSetNamesSoapIn" />
+      <wsdl:output message="tns:GetInternalDataSetNamesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IsBulkMethod">
+      <wsdl:input message="tns:IsBulkMethodSoapIn" />
+      <wsdl:output message="tns:IsBulkMethodSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LoadDataGetTicket">
+      <wsdl:input message="tns:LoadDataGetTicketSoapIn" />
+      <wsdl:output message="tns:LoadDataGetTicketSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LoadDataGetSamples">
+      <wsdl:input message="tns:LoadDataGetSamplesSoapIn" />
+      <wsdl:output message="tns:LoadDataGetSamplesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LoadDataGetAssays">
+      <wsdl:input message="tns:LoadDataGetAssaysSoapIn" />
+      <wsdl:output message="tns:LoadDataGetAssaysSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LoadDataExtractSets">
+      <wsdl:input message="tns:LoadDataExtractSetsSoapIn" />
+      <wsdl:output message="tns:LoadDataExtractSetsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LoadDataGetTotalSize">
+      <wsdl:input message="tns:LoadDataGetTotalSizeSoapIn" />
+      <wsdl:output message="tns:LoadDataGetTotalSizeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LoadDataGetSetSize">
+      <wsdl:input message="tns:LoadDataGetSetSizeSoapIn" />
+      <wsdl:output message="tns:LoadDataGetSetSizeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LoadDataGetChunk">
+      <wsdl:input message="tns:LoadDataGetChunkSoapIn" />
+      <wsdl:output message="tns:LoadDataGetChunkSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LoadDataCleanUp">
+      <wsdl:input message="tns:LoadDataCleanUpSoapIn" />
+      <wsdl:output message="tns:LoadDataCleanUpSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ResultWebServiceSoap" type="tns:ResultWebServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetMethods">
+      <soap:operation soapAction="Molmed.Chiasma/GetMethods" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResultPlateNameChanged">
+      <soap:operation soapAction="Molmed.Chiasma/ResultPlateNameChanged" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LogGenotypeExport">
+      <soap:operation soapAction="Molmed.Chiasma/LogGenotypeExport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LogSqatEvent">
+      <soap:operation soapAction="Molmed.Chiasma/LogSqatEvent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDataSets">
+      <soap:operation soapAction="Molmed.Chiasma/GetDataSets" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSubsets">
+      <soap:operation soapAction="Molmed.Chiasma/GetSubsets" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HasSubsets">
+      <soap:operation soapAction="Molmed.Chiasma/HasSubsets" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDataSetInfoName">
+      <soap:operation soapAction="Molmed.Chiasma/GetDataSetInfoName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSubsetInfoName">
+      <soap:operation soapAction="Molmed.Chiasma/GetSubsetInfoName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsValidDataSetInfo">
+      <soap:operation soapAction="Molmed.Chiasma/IsValidDataSetInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsValidSubsetInfo">
+      <soap:operation soapAction="Molmed.Chiasma/IsValidSubsetInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInternalDataSetNames">
+      <soap:operation soapAction="Molmed.Chiasma/GetInternalDataSetNames" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsBulkMethod">
+      <soap:operation soapAction="Molmed.Chiasma/IsBulkMethod" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadDataGetTicket">
+      <soap:operation soapAction="Molmed.Chiasma/LoadDataGetTicket" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadDataGetSamples">
+      <soap:operation soapAction="Molmed.Chiasma/LoadDataGetSamples" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadDataGetAssays">
+      <soap:operation soapAction="Molmed.Chiasma/LoadDataGetAssays" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadDataExtractSets">
+      <soap:operation soapAction="Molmed.Chiasma/LoadDataExtractSets" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadDataGetTotalSize">
+      <soap:operation soapAction="Molmed.Chiasma/LoadDataGetTotalSize" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadDataGetSetSize">
+      <soap:operation soapAction="Molmed.Chiasma/LoadDataGetSetSize" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadDataGetChunk">
+      <soap:operation soapAction="Molmed.Chiasma/LoadDataGetChunk" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadDataCleanUp">
+      <soap:operation soapAction="Molmed.Chiasma/LoadDataCleanUp" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ResultWebServiceSoap12" type="tns:ResultWebServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetMethods">
+      <soap12:operation soapAction="Molmed.Chiasma/GetMethods" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResultPlateNameChanged">
+      <soap12:operation soapAction="Molmed.Chiasma/ResultPlateNameChanged" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LogGenotypeExport">
+      <soap12:operation soapAction="Molmed.Chiasma/LogGenotypeExport" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LogSqatEvent">
+      <soap12:operation soapAction="Molmed.Chiasma/LogSqatEvent" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDataSets">
+      <soap12:operation soapAction="Molmed.Chiasma/GetDataSets" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSubsets">
+      <soap12:operation soapAction="Molmed.Chiasma/GetSubsets" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HasSubsets">
+      <soap12:operation soapAction="Molmed.Chiasma/HasSubsets" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDataSetInfoName">
+      <soap12:operation soapAction="Molmed.Chiasma/GetDataSetInfoName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSubsetInfoName">
+      <soap12:operation soapAction="Molmed.Chiasma/GetSubsetInfoName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsValidDataSetInfo">
+      <soap12:operation soapAction="Molmed.Chiasma/IsValidDataSetInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsValidSubsetInfo">
+      <soap12:operation soapAction="Molmed.Chiasma/IsValidSubsetInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInternalDataSetNames">
+      <soap12:operation soapAction="Molmed.Chiasma/GetInternalDataSetNames" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsBulkMethod">
+      <soap12:operation soapAction="Molmed.Chiasma/IsBulkMethod" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadDataGetTicket">
+      <soap12:operation soapAction="Molmed.Chiasma/LoadDataGetTicket" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadDataGetSamples">
+      <soap12:operation soapAction="Molmed.Chiasma/LoadDataGetSamples" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadDataGetAssays">
+      <soap12:operation soapAction="Molmed.Chiasma/LoadDataGetAssays" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadDataExtractSets">
+      <soap12:operation soapAction="Molmed.Chiasma/LoadDataExtractSets" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadDataGetTotalSize">
+      <soap12:operation soapAction="Molmed.Chiasma/LoadDataGetTotalSize" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadDataGetSetSize">
+      <soap12:operation soapAction="Molmed.Chiasma/LoadDataGetSetSize" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadDataGetChunk">
+      <soap12:operation soapAction="Molmed.Chiasma/LoadDataGetChunk" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadDataCleanUp">
+      <soap12:operation soapAction="Molmed.Chiasma/LoadDataCleanUp" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ResultWebService">
+    <wsdl:port name="ResultWebServiceSoap" binding="tns:ResultWebServiceSoap">
+      <soap:address location="http://mm-wchs001:65203/ChiasmaResultServiceDevelopment/ResultWebService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ResultWebServiceSoap12" binding="tns:ResultWebServiceSoap12">
+      <soap12:address location="http://mm-wchs001:65203/ChiasmaResultServiceDevelopment/ResultWebService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
