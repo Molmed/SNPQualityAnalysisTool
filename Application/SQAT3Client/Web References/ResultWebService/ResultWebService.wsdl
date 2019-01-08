@@ -22,8 +22,6 @@
           <s:sequence>
             <s:element minOccurs="0" maxOccurs="1" name="oldName" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="newName" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="callingDatabase" type="s:string" />
-            <s:element minOccurs="1" maxOccurs="1" name="timestamp" type="s:dateTime" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -55,6 +53,18 @@
         </s:complexType>
       </s:element>
       <s:element name="LogSqatEventResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="OneTimeExportSqatLogsToFiles">
+        <s:complexType />
+      </s:element>
+      <s:element name="OneTimeExportSqatLogsToFilesResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="OneTimeExportExistingToLogFiles">
+        <s:complexType />
+      </s:element>
+      <s:element name="OneTimeExportExistingToLogFilesResponse">
         <s:complexType />
       </s:element>
       <s:element name="GetDataSets">
@@ -336,6 +346,18 @@
   <wsdl:message name="LogSqatEventSoapOut">
     <wsdl:part name="parameters" element="tns:LogSqatEventResponse" />
   </wsdl:message>
+  <wsdl:message name="OneTimeExportSqatLogsToFilesSoapIn">
+    <wsdl:part name="parameters" element="tns:OneTimeExportSqatLogsToFiles" />
+  </wsdl:message>
+  <wsdl:message name="OneTimeExportSqatLogsToFilesSoapOut">
+    <wsdl:part name="parameters" element="tns:OneTimeExportSqatLogsToFilesResponse" />
+  </wsdl:message>
+  <wsdl:message name="OneTimeExportExistingToLogFilesSoapIn">
+    <wsdl:part name="parameters" element="tns:OneTimeExportExistingToLogFiles" />
+  </wsdl:message>
+  <wsdl:message name="OneTimeExportExistingToLogFilesSoapOut">
+    <wsdl:part name="parameters" element="tns:OneTimeExportExistingToLogFilesResponse" />
+  </wsdl:message>
   <wsdl:message name="GetDataSetsSoapIn">
     <wsdl:part name="parameters" element="tns:GetDataSets" />
   </wsdl:message>
@@ -455,6 +477,14 @@
       <wsdl:input message="tns:LogSqatEventSoapIn" />
       <wsdl:output message="tns:LogSqatEventSoapOut" />
     </wsdl:operation>
+    <wsdl:operation name="OneTimeExportSqatLogsToFiles">
+      <wsdl:input message="tns:OneTimeExportSqatLogsToFilesSoapIn" />
+      <wsdl:output message="tns:OneTimeExportSqatLogsToFilesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="OneTimeExportExistingToLogFiles">
+      <wsdl:input message="tns:OneTimeExportExistingToLogFilesSoapIn" />
+      <wsdl:output message="tns:OneTimeExportExistingToLogFilesSoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="GetDataSets">
       <wsdl:input message="tns:GetDataSetsSoapIn" />
       <wsdl:output message="tns:GetDataSetsSoapOut" />
@@ -555,6 +585,24 @@
     </wsdl:operation>
     <wsdl:operation name="LogSqatEvent">
       <soap:operation soapAction="Molmed.Chiasma/LogSqatEvent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OneTimeExportSqatLogsToFiles">
+      <soap:operation soapAction="Molmed.Chiasma/OneTimeExportSqatLogsToFiles" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OneTimeExportExistingToLogFiles">
+      <soap:operation soapAction="Molmed.Chiasma/OneTimeExportExistingToLogFiles" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -747,6 +795,24 @@
     </wsdl:operation>
     <wsdl:operation name="LogSqatEvent">
       <soap12:operation soapAction="Molmed.Chiasma/LogSqatEvent" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OneTimeExportSqatLogsToFiles">
+      <soap12:operation soapAction="Molmed.Chiasma/OneTimeExportSqatLogsToFiles" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OneTimeExportExistingToLogFiles">
+      <soap12:operation soapAction="Molmed.Chiasma/OneTimeExportExistingToLogFiles" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

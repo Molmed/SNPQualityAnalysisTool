@@ -37,6 +37,10 @@ namespace Molmed.SQAT.ResultWebService {
         
         private System.Threading.SendOrPostCallback LogSqatEventOperationCompleted;
         
+        private System.Threading.SendOrPostCallback OneTimeExportSqatLogsToFilesOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback OneTimeExportExistingToLogFilesOperationCompleted;
+        
         private System.Threading.SendOrPostCallback GetDataSetsOperationCompleted;
         
         private System.Threading.SendOrPostCallback GetSubsetsOperationCompleted;
@@ -122,6 +126,12 @@ namespace Molmed.SQAT.ResultWebService {
         public event LogSqatEventCompletedEventHandler LogSqatEventCompleted;
         
         /// <remarks/>
+        public event OneTimeExportSqatLogsToFilesCompletedEventHandler OneTimeExportSqatLogsToFilesCompleted;
+        
+        /// <remarks/>
+        public event OneTimeExportExistingToLogFilesCompletedEventHandler OneTimeExportExistingToLogFilesCompleted;
+        
+        /// <remarks/>
         public event GetDataSetsCompletedEventHandler GetDataSetsCompleted;
         
         /// <remarks/>
@@ -201,29 +211,25 @@ namespace Molmed.SQAT.ResultWebService {
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("Molmed.Chiasma/ResultPlateNameChanged", RequestNamespace="Molmed.Chiasma", ResponseNamespace="Molmed.Chiasma", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public void ResultPlateNameChanged(string oldName, string newName, string callingDatabase, System.DateTime timestamp) {
+        public void ResultPlateNameChanged(string oldName, string newName) {
             this.Invoke("ResultPlateNameChanged", new object[] {
                         oldName,
-                        newName,
-                        callingDatabase,
-                        timestamp});
+                        newName});
         }
         
         /// <remarks/>
-        public void ResultPlateNameChangedAsync(string oldName, string newName, string callingDatabase, System.DateTime timestamp) {
-            this.ResultPlateNameChangedAsync(oldName, newName, callingDatabase, timestamp, null);
+        public void ResultPlateNameChangedAsync(string oldName, string newName) {
+            this.ResultPlateNameChangedAsync(oldName, newName, null);
         }
         
         /// <remarks/>
-        public void ResultPlateNameChangedAsync(string oldName, string newName, string callingDatabase, System.DateTime timestamp, object userState) {
+        public void ResultPlateNameChangedAsync(string oldName, string newName, object userState) {
             if ((this.ResultPlateNameChangedOperationCompleted == null)) {
                 this.ResultPlateNameChangedOperationCompleted = new System.Threading.SendOrPostCallback(this.OnResultPlateNameChangedOperationCompleted);
             }
             this.InvokeAsync("ResultPlateNameChanged", new object[] {
                         oldName,
-                        newName,
-                        callingDatabase,
-                        timestamp}, this.ResultPlateNameChangedOperationCompleted, userState);
+                        newName}, this.ResultPlateNameChangedOperationCompleted, userState);
         }
         
         private void OnResultPlateNameChangedOperationCompleted(object arg) {
@@ -300,6 +306,58 @@ namespace Molmed.SQAT.ResultWebService {
             if ((this.LogSqatEventCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
                 this.LogSqatEventCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("Molmed.Chiasma/OneTimeExportSqatLogsToFiles", RequestNamespace="Molmed.Chiasma", ResponseNamespace="Molmed.Chiasma", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void OneTimeExportSqatLogsToFiles() {
+            this.Invoke("OneTimeExportSqatLogsToFiles", new object[0]);
+        }
+        
+        /// <remarks/>
+        public void OneTimeExportSqatLogsToFilesAsync() {
+            this.OneTimeExportSqatLogsToFilesAsync(null);
+        }
+        
+        /// <remarks/>
+        public void OneTimeExportSqatLogsToFilesAsync(object userState) {
+            if ((this.OneTimeExportSqatLogsToFilesOperationCompleted == null)) {
+                this.OneTimeExportSqatLogsToFilesOperationCompleted = new System.Threading.SendOrPostCallback(this.OnOneTimeExportSqatLogsToFilesOperationCompleted);
+            }
+            this.InvokeAsync("OneTimeExportSqatLogsToFiles", new object[0], this.OneTimeExportSqatLogsToFilesOperationCompleted, userState);
+        }
+        
+        private void OnOneTimeExportSqatLogsToFilesOperationCompleted(object arg) {
+            if ((this.OneTimeExportSqatLogsToFilesCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.OneTimeExportSqatLogsToFilesCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("Molmed.Chiasma/OneTimeExportExistingToLogFiles", RequestNamespace="Molmed.Chiasma", ResponseNamespace="Molmed.Chiasma", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void OneTimeExportExistingToLogFiles() {
+            this.Invoke("OneTimeExportExistingToLogFiles", new object[0]);
+        }
+        
+        /// <remarks/>
+        public void OneTimeExportExistingToLogFilesAsync() {
+            this.OneTimeExportExistingToLogFilesAsync(null);
+        }
+        
+        /// <remarks/>
+        public void OneTimeExportExistingToLogFilesAsync(object userState) {
+            if ((this.OneTimeExportExistingToLogFilesOperationCompleted == null)) {
+                this.OneTimeExportExistingToLogFilesOperationCompleted = new System.Threading.SendOrPostCallback(this.OnOneTimeExportExistingToLogFilesOperationCompleted);
+            }
+            this.InvokeAsync("OneTimeExportExistingToLogFiles", new object[0], this.OneTimeExportExistingToLogFilesOperationCompleted, userState);
+        }
+        
+        private void OnOneTimeExportExistingToLogFilesOperationCompleted(object arg) {
+            if ((this.OneTimeExportExistingToLogFilesCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.OneTimeExportExistingToLogFilesCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -885,6 +943,14 @@ namespace Molmed.SQAT.ResultWebService {
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.3062.0")]
     public delegate void LogSqatEventCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.3062.0")]
+    public delegate void OneTimeExportSqatLogsToFilesCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.3062.0")]
+    public delegate void OneTimeExportExistingToLogFilesCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.3062.0")]
